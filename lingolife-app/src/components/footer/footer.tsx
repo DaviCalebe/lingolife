@@ -1,10 +1,10 @@
-import './footer.css';
+import './footer.scss';
 
 export default function Home(){
   return (
     <>
       <footer>
-        <h1>LingoLife © Copyright 2024. All Rights Reserved. </h1>
+        <p>LingoLife © Copyright 2024. All Rights Reserved. </p>
       </footer>
     </>
   )
