@@ -1,8 +1,132 @@
+@import '../style/variables.scss';
+
 .banner{
     background-image: url(../assets/blue-bg.jpg);
+    height: 100vh;
 }
 
-.banner img{
-    width: 50%;
-    height: 50%;
+.welcome-msg{
+    color: $white;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex img{
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-msg{
+    position: relative;
+}
+
+.welcome-msg h1{
+    position: absolute;
+    font-size: 2.3rem;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+
+
+.languages{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 28rem;
+    padding: 1rem 0;
+    background-color: $grey;
+}
+
+.languages h1{
+    color: $dark-blue;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.description{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: $cyan;
+    height: 45rem;
+}
+
+.description div{
+    padding: 2rem;
+}
+
+.img-effect {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+  }
+
+.img-effect .void-box, .img-effect .dark-blue-box {
+    max-width: 542px;
+    max-height: 473px;
+    border-radius: 113px;
+}
+
+.img-effect .void-box {
+    transform: translateY(-30px);
+}
+
+.img-effect .dark-blue-box {
+    transform: translateY(30px) translateX(-30px);
+}
+
+.img-effect > * {
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 113px;
+}
+
+.img-effect .void-box {
+    background-color: transparent;
+    border: 1px solid $dark-blue;
+}
+
+.img-effect .dark-blue-box {
+    background-color: $dark-blue;
+}
+  
+.img-effect img {
+    z-index: 5;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.info h1{
+    color: $dark-blue;
+    font-size: 3.5rem;
+}
+
+.info p{
+    color: $white;
+    font-size: 2.5rem;
+}
+
+.home-shortcuts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 32rem;
+}
+
+.smart-matching{
+    background-color: $grey;
+}
+
+.forum-space{
+    background-color: $white;
 }
