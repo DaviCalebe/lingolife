@@ -2,6 +2,7 @@ import './home.scss'
 import Navbar from '../components/navbar/navbar.tsx';
 import Footer from '../components/footer/footer.tsx';
 import woman_notebook from '../assets/woman-notebook.png';
+import usa_flag from '../assets/usa-flag.png';
  
 function Home() {
 
@@ -14,7 +15,10 @@ function Home() {
       <section className='languages'>
         <h1>Escolha seu idioma de interesse</h1>
         <div className="flags">
-
+          <img src={usa_flag} alt="usa-flag" />
+          <img src={usa_flag} alt="usa-flag" />
+          <img src={usa_flag} alt="usa-flag" />
+          <img src={usa_flag} alt="usa-flag" />
         </div>
       </section>
 
