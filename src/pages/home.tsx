@@ -30,6 +30,7 @@ function Home() {
         </div>
       </section>
 
+
       <section className="home-shortcuts">
         <div className="smart-matching">
 
