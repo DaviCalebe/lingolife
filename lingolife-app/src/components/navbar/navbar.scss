@@ -1,0 +1,49 @@
+@import '../../style/variables.scss';
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.void-box{
+    position: absolute;
+    top: -50px;
+    left: -80px;
+    background-color: transparent;
+    width: 23.4rem;
+    height: 13.2rem;
+    border: 1px solid $white;
+    border-radius: 47px;
+}
+
+.white-box{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    position: relative;
+    top: -20px;
+    background-color: $white;
+    width: 23.4rem;
+    height: 13.2rem;
+    border-radius: 47px;
+}
+
+.white-box img{
+    width: 50%;
+    height: 60%;
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-buttons button{
+    background-color: $dark-blue;
+    color: $white;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
