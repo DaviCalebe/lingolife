@@ -3,6 +3,8 @@ import Navbar from '../components/navbar/navbar.tsx';
 import Footer from '../components/footer/footer.tsx';
 import woman_notebook from '../assets/woman-notebook.png';
 import usa_flag from '../assets/usa-flag.png';
+import smart_matching from '../assets/smart-matching.png';
+import forum_space from '../assets/forum-space.png';
  
 function Home() {
 
@@ -36,10 +38,10 @@ function Home() {
 
       <section className="home-shortcuts">
         <div className="smart-matching">
-
+          <img src={smart_matching} alt="smart-matching" />
         </div>
         <div className="forum-space">
-
+          <img src={forum_space} alt="" />
         </div>
       </section>
 

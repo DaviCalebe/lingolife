@@ -1,4 +1,5 @@
 import './navbar.scss'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/lingolife-logo-original.png'
 
 
@@ -6,17 +7,19 @@ export default function Navbar(){
     return (
         <>
             <nav>
-                <div className="logo">
-                    <div className="void-box">
-                        <div className="white-box">
-                            <img src={logo} alt="logo" />
+                <Link to="/">
+                    <div className="logo">
+                        <div className="void-box">
+                            <div className="white-box">
+                                <img src={logo} alt="logo" />
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Link>
 
                 <div className="nav-buttons">
-                    <button>Entrar</button>
-                    <button>Registrar</button>
+                    <Link to="login"> <button>Entrar</button> </Link>
+                    <Link to="login"> <button>Registrar</button> </Link>
                 </div>
             </nav>
         </>

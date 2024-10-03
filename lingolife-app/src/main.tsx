@@ -1,10 +1,11 @@
+import './style/global.scss'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Home from './pages/home.tsx'
-import './style/global.scss'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routes.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Home />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
