@@ -58,7 +58,7 @@
     align-items: center;
     justify-items: center;
     background-color: $cyan;
-    height: 45rem;
+    height: auto;
 }
 
 .description div{
@@ -124,7 +124,7 @@
 .home-shortcuts{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 38rem;
+    height: auto;
 }
 
 .smart-matching{
@@ -133,6 +133,7 @@
     align-items: center;
     gap: 2rem;
     background-color: #f6f6f6;
+    padding-bottom: 60px;
 }
 
 .forum-space{
@@ -141,6 +142,7 @@
     align-items: center;
     gap: 2rem;
     background-color: $white;
+    padding-bottom: 60px;
 }
 
 .smart-matching p, .forum-space p{
@@ -179,7 +181,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: $cyan;
-    height: 45rem;
+    height: auto;
+    padding: 2rem;
     text-align: center;
 }
 
@@ -210,4 +213,21 @@
     font-size: 1.6rem;
     font-weight: 600;
     padding: 10px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1282px) { 
+    .description{
+        grid-template-columns: 1fr;
+    }
+    .description div{
+        padding: 4rem;
+    }
+    .home-shortcuts{
+        grid-template-columns: 1fr;
+    }
+    .filter-and-scheduling{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }

@@ -10,9 +10,9 @@ export default function Navbar(){
                 <Link to="/">
                     <div className="logo">
                         <div className="void-box">
-                            <div className="white-box">
-                                <img src={logo} alt="logo" />
-                            </div>
+                        </div>
+                        <div className="white-box">
+                            <img src={logo} alt="logo" />
                         </div>
                     </div>
                 </Link>

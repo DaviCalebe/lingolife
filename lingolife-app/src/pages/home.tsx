@@ -69,11 +69,11 @@ function Home() {
           <div className="container">
             <h1>Seus Agendamentos</h1>
           </div>
-
         </div>
       </section>
 
       <Footer />
+
     </main>
   )
 }
