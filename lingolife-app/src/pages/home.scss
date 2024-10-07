@@ -1,38 +1,34 @@
 @import '../style/variables.scss';
 
-
 .banner{
-    background-image: url(../assets/blue-bg.jpg);
+    background-image: url(../assets/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
 }
 
+.banner-elements{
+    display: flex;
+}
+
+.paper-img{
+    width: 70%;
+}
+
+.woman-img{
+    width: 100%;
+    max-width: 43rem;
+}
+
 .welcome-msg{
+    display: flex;
+    flex-direction: column;
     color: $white;
 }
 
-.flex{
-    display: flex;
-    flex-direction: row;
+.welcome-msg h1, .welcome-msg p{
+    font-size: 36px;
 }
-
-.flex img{
-    width: 100%;
-    height: 100%;
-}
-
-.welcome-msg{
-    position: relative;
-}
-
-.welcome-msg h1{
-    position: absolute;
-    font-size: 2.3rem;
-    top: 50%;
-    left: 50%;
-    z-index: 1;
-}
-
-
 
 .languages{
     display: grid;
@@ -154,7 +150,7 @@
     font-size: 1.5rem;
 }
 
-.smart-matching .grid-centralize, .forum-space .grid-centralize{
+.grid-centralize{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -180,6 +176,38 @@
 }
 
 .filter-and-scheduling{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color: $cyan;
     height: 45rem;
+    text-align: center;
+}
+
+.filters, .scheduling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-and-scheduling .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 50%;
+    padding: 3rem;
+    background-color: $white;
+    border-radius: 43px;
+    color: $dark-blue;
+}
+
+.container button{
+    width: 70%;
+    background-color: $dark-blue;
+    color: $white;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 10px;
 }

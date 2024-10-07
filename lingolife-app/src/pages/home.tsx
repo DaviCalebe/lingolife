@@ -1,6 +1,8 @@
 import './home.scss'
 import Navbar from '../components/navbar/navbar.tsx';
 import Footer from '../components/footer/footer.tsx';
+import paper from '../assets/paper.png'
+import woman from '../assets/woman.png'
 import woman_notebook from '../assets/woman-notebook.png';
 import usa_flag from '../assets/usa-flag.png';
 import smart_matching from '../assets/smart-matching.png';
@@ -54,7 +56,21 @@ function Home() {
       </section>
 
       <section className="filter-and-scheduling">
-        
+        <div className="filters">
+          <div className="container">
+            <h1>Quais são os seus objetivos?</h1>
+            <p>Escolha e acesse conteúdos específicos</p>
+            <button>Trabalho</button>
+            <button>Viagem</button>
+            <button>Diversão</button>
+          </div>
+        </div>
+        <div className="scheduling">
+          <div className="container">
+            <h1>Seus Agendamentos</h1>
+          </div>
+
+        </div>
       </section>
 
       <Footer />
