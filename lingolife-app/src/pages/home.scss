@@ -128,13 +128,58 @@
 .home-shortcuts{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 32rem;
+    height: 38rem;
 }
 
 .smart-matching{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     background-color: #f6f6f6;
 }
 
 .forum-space{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     background-color: $white;
+}
+
+.smart-matching p, .forum-space p{
+    width: 50%;
+    color: $dark-blue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.smart-matching .grid-centralize, .forum-space .grid-centralize{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-centralize > *{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.home-shortcuts div button{
+    background-color: $dark-blue;
+    color: $white;
+    width: 25rem;
+    height: 8rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 2rem;
+    margin-top: 19rem;
+}
+
+.filter-and-scheduling{
+    background-color: $cyan;
+    height: 45rem;
 }

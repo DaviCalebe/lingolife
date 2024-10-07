@@ -38,11 +38,23 @@ function Home() {
 
       <section className="home-shortcuts">
         <div className="smart-matching">
-          <img src={smart_matching} alt="smart-matching" />
+          <div className="grid-centralize">
+            <img src={smart_matching} alt="smart-matching" />
+            <button className='img-button'>Correspondência <br /> Inteligente</button>
+          </div>
+          <p>Encontre aqui parceiros de estudo com habilidades complementares</p>
         </div>
         <div className="forum-space">
-          <img src={forum_space} alt="" />
+          <div className='grid-centralize'>
+            <img src={forum_space} alt="" />
+            <button className='img-button'>Espaço de <br /> Compartilhamento</button>
+          </div>
+          <p>Troque materiais didáticos e dicas valiosas</p>
         </div>
+      </section>
+
+      <section className="filter-and-scheduling">
+        
       </section>
 
       <Footer />
