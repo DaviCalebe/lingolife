@@ -1,10 +1,13 @@
 import './home.scss'
+import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar/navbar.tsx';
 import Footer from '../components/footer/footer.tsx';
-import paper from '../assets/paper.png'
-import woman from '../assets/woman.png'
 import woman_notebook from '../assets/woman-notebook.png';
 import usa_flag from '../assets/usa-flag.png';
+import spain_flag from '../assets/spain-flag.png'
+import france_flag from '../assets/france-flag.png'
+import italy_flag from '../assets/italy-flag.png'
+import brazil_flag from '../assets/brazil-flag.png'
 import smart_matching from '../assets/smart-matching.png';
 import forum_space from '../assets/forum-space.png';
  
@@ -19,10 +22,11 @@ function Home() {
       <section className='languages'>
         <h1>Escolha seu idioma de interesse</h1>
         <div className="flags">
+          <img src={brazil_flag} alt="brazil-flag" />
           <img src={usa_flag} alt="usa-flag" />
-          <img src={usa_flag} alt="usa-flag" />
-          <img src={usa_flag} alt="usa-flag" />
-          <img src={usa_flag} alt="usa-flag" />
+          <img src={spain_flag} alt="usa-flag" />
+          <img src={france_flag} alt="usa-flag" />
+          <img src={italy_flag} alt="usa-flag" />
         </div>
       </section>
 
@@ -40,17 +44,21 @@ function Home() {
 
       <section className="home-shortcuts">
         <div className="smart-matching">
-          <div className="grid-centralize">
-            <img src={smart_matching} alt="smart-matching" />
-            <button className='img-button'>Correspondência <br /> Inteligente</button>
-          </div>
+          <Link to='/matching' className='no-underline'>
+            <div className="grid-centralize">
+              <img src={smart_matching} alt="smart-matching" />
+              <button className='img-button'>Correspondência <br /> Inteligente</button>
+            </div>
+          </Link>
           <p>Encontre aqui parceiros de estudo com habilidades complementares</p>
         </div>
         <div className="forum-space">
-          <div className='grid-centralize'>
-            <img src={forum_space} alt="" />
-            <button className='img-button'>Espaço de <br /> Compartilhamento</button>
-          </div>
+          <Link to='/forum' className='no-underline'>
+            <div className='grid-centralize'>
+              <img src={forum_space} alt="" />
+              <button className='img-button'>Espaço de <br /> Compartilhamento</button>
+            </div>
+          </Link>
           <p>Troque materiais didáticos e dicas valiosas</p>
         </div>
       </section>

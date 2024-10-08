@@ -18,3 +18,15 @@ h1{
 p{
     font-size: 1.5rem;
 }
+
+.no-underline{
+    text-decoration: none;
+}
+
+.no-underline button {
+    background-color: $dark-blue;
+
+    &:hover {
+        background-color: #0A1A3F;
+    }
+}

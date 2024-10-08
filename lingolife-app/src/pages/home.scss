@@ -32,10 +32,11 @@
 
 .languages{
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    gap: 6rem;
     width: 100%;
-    height: 28rem;
-    padding: 1rem 0;
+    height: auto;
+    padding: 3rem 0 5rem 0;
     background-color: $grey;
 }
 
@@ -46,10 +47,21 @@
 }
 
 .languages .flags{
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
     align-items: center;
+}
+
+.flags img{
+    width: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .description{
@@ -166,6 +178,10 @@
     grid-row: 1;
 }
 
+.img-button{
+    cursor: pointer;
+}
+
 .home-shortcuts div button{
     background-color: $dark-blue;
     color: $white;
@@ -229,5 +245,9 @@
     .filter-and-scheduling{
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    .languages .flags{
+        grid-template-columns: 1fr;
+        gap: 5rem;
     }
 }

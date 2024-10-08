@@ -7,19 +7,19 @@ export default function Navbar(){
     return (
         <>
             <nav>
-                <Link to="/">
-                    <div className="logo">
+                <div className="logo">
+                    <Link to="/">
                         <div className="void-box">
                         </div>
-                        <div className="white-box">
-                            <img src={logo} alt="logo" />
-                        </div>
+                    </Link>
+                    <div className="white-box">
+                        <img src={logo} alt="logo" />
                     </div>
-                </Link>
+                </div>
 
                 <div className="nav-buttons">
-                    <Link to="login"> <button>ENTRAR</button> </Link>
-                    <Link to="login"> <button>REGISTRAR</button> </Link>
+                    <Link to="login" className='no-underline'> <button>ENTRAR</button> </Link>
+                    <Link to="login" className='no-underline'> <button>REGISTRAR</button> </Link>
                 </div>
             </nav>
         </>
