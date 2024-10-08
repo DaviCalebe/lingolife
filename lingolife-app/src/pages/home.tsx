@@ -11,7 +11,7 @@ import brazil_flag from '../assets/brazil-flag.png'
 import smart_matching from '../assets/smart-matching.png';
 import forum_space from '../assets/forum-space.png';
  
-function Home() {
+const Home = () => {
 
   return (
     <main>

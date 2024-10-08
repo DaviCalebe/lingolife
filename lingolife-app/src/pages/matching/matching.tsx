@@ -1,12 +1,14 @@
 import './matching.scss'
+import Navbar from '../../components/navbar/navbar'
 
 const Matching = () => {
     return (
-        <>
-        <h1>Matching</h1>
-        </>
+        <main>
+            <Navbar
+            title='Correspondência Inteligente'
+            description='Aqui você pode encontrar pessoas com objetivos semelhantes aos seus'/>
+        </main>
     )
 }
-
 
 export default Matching

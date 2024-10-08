@@ -1,6 +1,6 @@
 import './footer.scss';
 
-export default function Home(){
+const Footer = () => {
   return (
     <>
       <footer>
@@ -9,3 +9,5 @@ export default function Home(){
     </>
   )
 }
+
+export default Footer
