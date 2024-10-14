@@ -5,6 +5,8 @@
     grid-template-rows: 200px auto 1fr;
     justify-items: center;
     width: 30vw;
+    min-width: 25rem;
+    max-width: 26.5rem;
     border-radius: 45px;
     color: $white;
     background-color: $dark-blue;
@@ -60,4 +62,8 @@
     border-radius: 25px;
     font-weight: 500;
     cursor: pointer;
+
+    &:hover{
+        background-color: rgba($purple, 0.9);
+    }
 }
