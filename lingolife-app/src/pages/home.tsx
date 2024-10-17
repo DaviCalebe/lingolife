@@ -12,6 +12,8 @@ import smart_matching from '../assets/smart-matching.png';
 import forum_space from '../assets/forum-space.png';
  
 const Home = () => {
+  console.log('Home component rendered');
+
 
   return (
     <main>

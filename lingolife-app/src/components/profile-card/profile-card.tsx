@@ -1,17 +1,16 @@
 import './profile-card.scss'
+import { IBaseCard } from '../shared/interfaces'
 
-interface IProfileCard {
-  name: string,
-  image?: string,
-  language: string,
+interface IProfileCard extends IBaseCard{
+  language_level: string,
   about?: string,
-  buttonText?: string
 }
 
 const ProfileCard = ({
   name = '',
-  image = '',
+  profile_image = '',
   language = '',
+  language_level = '',
   about = '',
   buttonText = 'VISITAR O PERFIL'
 }: IProfileCard) => {
@@ -19,20 +18,18 @@ const ProfileCard = ({
     <div className="profile-card">
       <div className="user-header">
         <div className="grid-centralize">
-            {image ? (
-                <img src={image} alt="profile-pic" />
+            {profile_image ? (
+                <img src={profile_image} alt="profile-pic" />
             ) : (
                 <div className="over-box">
                     <p className='no-image'>Sem imagem</p>
                 </div>
-                
-                
             )}
-          <div className="under-box"></div>
+            <div className="under-box"></div>
         </div>
         <div className="user-info">
           <h1>{name}</h1>
-          <h2>{language}</h2>
+          <h2>{language} {language_level}</h2>
         </div>
       </div>
       {about ? (
