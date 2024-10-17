@@ -6,8 +6,6 @@ const App = () => { // Removed React.FC
     const [loading, setLoading] = useState<boolean>(false);
     const location = useLocation();
 
-    
-
     useEffect(() => {
         console.log('Route changed:', location.pathname);
         setLoading(true);
