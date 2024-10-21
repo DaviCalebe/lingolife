@@ -6,15 +6,10 @@ const forumController = {
     create: async (req, res) => {
         try {
             const file = req.file;  
-            console.log(file); // Verifica o conteúdo de req.file
-            if (!file) {
-                return res.status(400).json({ msg: 'Nenhum arquivo foi enviado!' });
-            }
-    
             const forum = {
-                Title: req.body.Title,  
-                description: req.body.description,  
-                filmeSrc: file.path,
+                title: req.body.title,  
+                content: req.body.content,  
+                fileSrc: file ? file.path : null,
             };
 
             const response = await Forum.create(forum);
@@ -67,11 +62,18 @@ const forumController = {
                   res.status(404).json({msg:"Publicação não encontrada"});
                   return;
                 }
-            
-            fs.unlinkSync(forumPublications.filmeSrc)
-            const deletedPublication = await Forum.findByIdAndDelete(id);
-
-            res.status(200).json({deletedPublication,msg:"Publicação deleteda com sucesso"});
+                
+            if(forumPublications.fileSrc){
+                fs.unlinkSync(forumPublications.fileSrc)
+                const deletedPublication = await Forum.findByIdAndDelete(id);
+                res.status(200).json({deletedPublication,msg:"Publicação deleteda com sucesso"});
+            }
+            else{
+                const deletedPublication = await Forum.findByIdAndDelete(id);
+                res.status(200).json({deletedPublication,msg:"Publicação deleteda com sucesso"});
+            }
+           
+           
         } catch (error) {
             console.log(error);
         }
@@ -86,8 +88,8 @@ const forumController = {
         }
 
         const updatedPublication = {
-        Title: req.body.Title || existingPublication.Title,
-        description: req.body.description || existingPublication.description
+        title: req.body.title || existingPublication.title,
+        content: req.body.content || existingPublication.content
     };
 
         const updatePublication = await Forum.findByIdAndUpdate(id,updatedPublication);
