@@ -20,10 +20,10 @@ const Navbar = (props: any) => {
                         </div>
                     </div>
     
-                    <div className="nav-buttons">
+{/*                     <div className="nav-buttons">
                         <Link to="login" className='no-underline'> <button>ENTRAR</button> </Link>
                         <Link to="login" className='no-underline'> <button>REGISTRAR</button> </Link>
-                    </div>
+                    </div> */}
                 </nav>
                 <div className="nav-title">
                     <h2>você está acessando o</h2>
@@ -46,10 +46,10 @@ const Navbar = (props: any) => {
                         </div>
                     </div>
     
-                    <div className="nav-buttons">
+{/*                     <div className="nav-buttons">
                         <Link to="login" className='no-underline'> <button>ENTRAR</button> </Link>
                         <Link to="login" className='no-underline'> <button>REGISTRAR</button> </Link>
-                    </div>
+                    </div> */}
                 </nav>
             </>
         )

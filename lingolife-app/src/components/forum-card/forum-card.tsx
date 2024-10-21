@@ -1,5 +1,5 @@
 import './forum-card.scss';
-import { IBaseCard } from '../shared/interfaces';
+import { IBaseCard } from '../shared/interfaces.tsx';
 
 interface IForumCard extends IBaseCard{
     title: string,
