@@ -12,7 +12,7 @@ const Forum = () => {
             
 
             <div className="posts">
-                <button className='dark-blue-button'>Criar publicação</button>
+                <button className='create-post-button'>Criar publicação</button>
              
                 <ForumCard 
                     name="João Silva"
