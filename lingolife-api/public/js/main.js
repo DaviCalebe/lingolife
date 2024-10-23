@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
             postElement.innerHTML = `
                 <h2>${post.title}</h2>
                 <p>${post.content}</p>
-                <h3>${post.language}</h3>
                 ${post.fileSrc ? `<a href="${post.fileSrc}" download>Baixar Arquivo</a>` : ''}
             `;
             postsContainer.appendChild(postElement);
@@ -28,10 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData();
         formData.append('title', document.getElementById('title').value);
         formData.append('content', document.getElementById('content').value);
-        formData.append('language', document.getElementById('language').value);
         const fileInput = document.getElementById('file');
-        
-
         
         if (fileInput.files.length > 0) {
             formData.append('fileSrc', fileInput.files[0]);
