@@ -3,21 +3,17 @@ import { IBaseCard } from '../shared/interfaces.tsx';
 import { fetchPublications } from '../../services/publications-service.ts';
 import { useEffect, useState } from 'react';
 
-interface IForumCard extends IBaseCard{
+export interface IForumCard extends IBaseCard{
     title: string,
     content: string,
     fileSrc?: string,
-    date: string
+    language: string
 }
 
 const ForumCard = ({
-    name='',
     profile_image='',
+    name='',
     buttonText='Visitar o perfil',
-    date='',
-    language='',
-    title='',
-    content='',
 }:IForumCard) => {
 
     const [publications, setPublications] = useState<IForumCard[]>([]);
@@ -54,14 +50,18 @@ const ForumCard = ({
                         <h3>{buttonText}</h3>
                     </div>
             </div>
-            <h3>Publicado em {date}</h3>
+            <h3>Publicado em data</h3>
             <div className="post-content">
-                {publications.map((pub, index) => (
-                    <li key={index}>
-                        <h1 className="title">{pub.title}</h1>
-                        <p className="content">{pub.content}</p>
-                    </li>
-                ))};
+                {error ? (
+                    <p>{error}</p>
+                ) : (
+                    publications.map((pub, index) => (
+                        <li key={index}>
+                            <h1 className="title">{pub.title}</h1>
+                            <p className="content">{pub.content}</p>
+                        </li>
+                    ))
+                )}
             </div>
         </div>
     )

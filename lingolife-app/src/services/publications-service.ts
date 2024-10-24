@@ -1,3 +1,5 @@
+import { IForumCard } from '../components/forum-card/forum-card.tsx';
+
 const apiUrl = 'http://127.0.0.1:5000/forum/publication';
 
 export const fetchPublications = async (): Promise<IForumCard[]> => {
