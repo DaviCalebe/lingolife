@@ -1,16 +1,32 @@
 import './forum.scss'
 import Navbar from '../../components/navbar/navbar'
 import ForumCard from '../../components/forum-card/forum-card'
-import usa_flag from '../../assets/usa-flag.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ForumCrudModal from '../../components/forum-crud-modal/forum-crud-modal';
+import { fetchPublications } from '../../services/publications-service'
+import { IForumCard } from '../../components/forum-card/forum-card'
 
 const Forum = () => {
 
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [publications, setPublications] = useState<IForumCard[]>([]);
+    const [error, setError] = useState<string | null>(null);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+
+    useEffect(() => {
+        const loadPublications = async () => {
+            try {
+                const data = await fetchPublications();
+                setPublications(data);
+            } catch (error) {
+                setError(error instanceof Error ? error.message : 'Erro desconhecido');
+            }
+        };
+
+        loadPublications(); // Call the function directly in useEffect
+    }, []);
 
     return (
         <main>
@@ -23,21 +39,22 @@ const Forum = () => {
 
                 <ForumCrudModal isOpen={isModalOpen} onClose={closeModal} />
                 
-                <ForumCard 
-                    name="João Silva"
-                    buttonText="Visitar o perfil"
-                    language={usa_flag}
-                    title="Dicas de programação em React"
-                    content="Aprenda a criar componentes reutilizáveis e a gerenciar o estado de forma eficiente."
-                />
-                <ForumCard 
-                    name="Maria Oliveira"
-                    buttonText="Visitar o perfil"
-                    language="Inglês"
-                    title="Introduction to TypeScript"
-                    content="TypeScript is a superset of JavaScript that adds static typing to the code."
-                />
-                <ForumCard 
+                {error ? (
+                    <p>{error}</p>
+                ) : (
+                    publications.map((pub, index) => (
+                        <ForumCard 
+                            key={index}
+                            name="teste" // Assuming name is part of the publication data
+                            buttonText="Visitar o perfil" // You might want to adjust this based on your data
+                            title={pub.title}
+                            content={pub.content}
+                            fileSrc={pub.fileSrc}
+                            language='portuguese'
+                        />
+                    ))
+                )}
+{/*                 <ForumCard 
                     name="Carlos Pereira"
                     buttonText="Visitar o perfil"
                     language="Português"
@@ -64,7 +81,7 @@ const Forum = () => {
                     language="Inglês"
                     title="Styling Components with SASS"
                     content="Discover how to use SASS to style your components efficiently."
-                />
+                /> */}
 
             </div>
         </main>

@@ -6,9 +6,7 @@ import ErrorPage from "./pages/error/error.tsx";
 import Forum from "./pages/forum/forum.tsx";
 import App from "./App.tsx"; // Import the App component
 
-
-console.log('teste')
-let router: any; // Declare the router variable outside the try block
+let router: ReturnType<typeof createBrowserRouter>; // Use ReturnType to get the correct type
 
 try {
     router = createBrowserRouter([
@@ -37,7 +35,6 @@ try {
         }
     ]);
 
-    console.log('Router initialized with routes:', router);
 } catch (error) {
     console.error('Error initializing router:', error);
 }

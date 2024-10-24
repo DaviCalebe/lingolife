@@ -7,7 +7,6 @@ const App = () => { // Removed React.FC
     const location = useLocation();
 
     useEffect(() => {
-        console.log('Route changed:', location.pathname);
         setLoading(true);
         const timeoutId = setTimeout(() => setLoading(false), 1000);
         return () => clearTimeout(timeoutId);
@@ -15,7 +14,7 @@ const App = () => { // Removed React.FC
 
     return (
         <>
-            {loading ? <Loading /> : (console.log('ola'), <Outlet />)}
+            {loading ? <Loading /> :  <Outlet />}
         </>
     );
 };
