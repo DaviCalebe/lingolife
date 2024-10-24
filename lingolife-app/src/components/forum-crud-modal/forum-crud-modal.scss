@@ -1,7 +1,41 @@
 @import '../../style/variables.scss';
 
+.forum-crud-modal {
+    position: fixed; /* Position it fixed to cover the entire viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is on top of other elements */
+}
+
+.overlay{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay{
+    background: rgba(49, 49, 49, 0.8);
+}
+
 .forum-crud-modal .container{
-    background-color: $white;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+    height: 50%;
+    background: white; /* Background color of the modal */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    z-index: 1001; /* Ensure it is above the background */
 }

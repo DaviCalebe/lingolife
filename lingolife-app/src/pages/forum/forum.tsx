@@ -2,8 +2,16 @@ import './forum.scss'
 import Navbar from '../../components/navbar/navbar'
 import ForumCard from '../../components/forum-card/forum-card'
 import usa_flag from '../../assets/usa-flag.png'
+import { useState } from 'react'
+import ForumCrudModal from '../../components/forum-crud-modal/forum-crud-modal';
 
 const Forum = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <main>
             <Navbar
@@ -11,8 +19,10 @@ const Forum = () => {
             description='Aqui você pode acessar materiais publicados por outros usuários ou publicar os seus'/>
 
             <div className="posts">
-                <button className='create-post-button'>Criar publicação</button>
-             
+                <button className='create-post-button' onClick={openModal}>Criar publicação</button>
+
+                <ForumCrudModal isOpen={isModalOpen} onClose={closeModal} />
+                
                 <ForumCard 
                     name="João Silva"
                     buttonText="Visitar o perfil"
