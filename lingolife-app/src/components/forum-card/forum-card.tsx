@@ -4,7 +4,7 @@ import { IBaseCard } from '../shared/interfaces.tsx';
 export interface IForumCard extends IBaseCard {
     title: string,
     content: string,
-    fileSrc?: string,
+    fileSrc?: File | null,
     language: string
 }
 
@@ -17,6 +17,7 @@ const ForumCard = ({
     fileSrc,
     language,
 }: IForumCard) => {
+    
     return (
         <div className='forum-card'>
             <div className="header">

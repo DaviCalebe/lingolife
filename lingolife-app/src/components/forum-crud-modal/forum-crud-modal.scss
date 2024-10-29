@@ -38,3 +38,14 @@
     border-radius: 8px; /* Rounded corners */
     z-index: 1001; /* Ensure it is above the background */
 }
+
+.action-buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.action-buttons button{
+    border-radius: 10px;
+}

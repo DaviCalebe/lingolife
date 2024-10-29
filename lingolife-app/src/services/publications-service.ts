@@ -15,3 +15,24 @@ export const fetchPublications = async (): Promise<IForumCard[]> => {
         throw error; // Repropaga o erro para tratamento posterior
     }
 };
+
+export async function createPublications(data: IForumCard): Promise<void> {
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log('Success:', result);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}

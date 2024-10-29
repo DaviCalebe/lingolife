@@ -19,7 +19,6 @@ const Forum = () => {
         const loadPublications = async () => {
             try {
                 const data = await fetchPublications();
-                console.log(data)
                 setPublications(data);
             } catch (error) {
                 setError(error instanceof Error ? error.message : 'Erro desconhecido');
