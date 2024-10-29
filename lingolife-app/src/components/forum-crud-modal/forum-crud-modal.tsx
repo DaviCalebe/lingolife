@@ -1,7 +1,7 @@
 import './forum-crud-modal.scss'
 import { useState } from 'react';
 import { createPublications } from '../../services/publications-service';
-import { IForumCard } from '../forum-card/forum-card';
+import { ICreatePublication } from '../../shared/interfaces';
 
 interface ModalProps{
     isOpen: boolean;
@@ -15,7 +15,7 @@ const ForumCrudModal = ({ isOpen, onClose }: ModalProps) => {
     const [fileSrc, setFileSrc] = useState<File | null>(null);
 
     const handleSubmit = async () => {
-        const postData: IForumCard = { name:"teste", title, language, content, fileSrc}
+        const postData: ICreatePublication = { title, language, content, fileSrc}
         try{
             await createPublications(postData);
             console.log('Postagem criada com sucesso!')

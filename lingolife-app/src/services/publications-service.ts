@@ -1,8 +1,8 @@
-import { IForumCard } from '../components/forum-card/forum-card.tsx';
+import { IPublication, ICreatePublication } from '../shared/interfaces.tsx';
 
 const apiUrl = 'http://127.0.0.1:5000/forum/publication';
 
-export const fetchPublications = async (): Promise<IForumCard[]> => {
+export const fetchPublications = async (): Promise<IPublication[]> => {
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -16,7 +16,7 @@ export const fetchPublications = async (): Promise<IForumCard[]> => {
     }
 };
 
-export async function createPublications(data: IForumCard): Promise<void> {
+export async function createPublications(data: ICreatePublication): Promise<void> {
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',

@@ -1,12 +1,5 @@
 import './forum-card.scss';
-import { IBaseCard } from '../shared/interfaces.tsx';
-
-export interface IForumCard extends IBaseCard {
-    title: string,
-    content: string,
-    fileSrc?: File | null,
-    language: string
-}
+import { IPublication } from '../../shared/interfaces.tsx';
 
 const ForumCard = ({
     profile_image = '',
@@ -16,7 +9,9 @@ const ForumCard = ({
     content,
     fileSrc,
     language,
-}: IForumCard) => {
+}: IPublication) => {
+
+    const fileUrl = fileSrc instanceof File ? URL.createObjectURL(fileSrc) : fileSrc;
     
     return (
         <div className='forum-card'>
@@ -40,8 +35,8 @@ const ForumCard = ({
             <div className="post-content">
                 <h1 className="title">{title}</h1>
                 <p className="content">{content}</p>
-                {fileSrc ?? (
-                    <img src={fileSrc} alt="pub-image" />
+                {fileUrl && typeof fileUrl === 'string' && (
+                    <img src={fileUrl} alt="pub-image" />
                 )}
             </div>
         </div>

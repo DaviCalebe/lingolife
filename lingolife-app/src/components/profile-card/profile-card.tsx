@@ -1,5 +1,5 @@
 import './profile-card.scss'
-import { IBaseCard } from '../shared/interfaces.tsx'
+import { IBaseCard } from '../../shared/interfaces.tsx'
 
 interface IProfileCard extends IBaseCard{
   language_level: string,

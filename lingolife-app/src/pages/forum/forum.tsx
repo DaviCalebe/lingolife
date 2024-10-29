@@ -4,12 +4,12 @@ import ForumCard from '../../components/forum-card/forum-card'
 import { useState, useEffect } from 'react'
 import ForumCrudModal from '../../components/forum-crud-modal/forum-crud-modal';
 import { fetchPublications } from '../../services/publications-service'
-import { IForumCard } from '../../components/forum-card/forum-card'
+import { IPublication } from '../../shared/interfaces';
 
 const Forum = () => {
 
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [publications, setPublications] = useState<IForumCard[]>([]);
+    const [publications, setPublications] = useState<IPublication[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     const openModal = () => setIsModalOpen(true);
@@ -25,8 +25,12 @@ const Forum = () => {
             }
         };
 
-        loadPublications(); // Call the function directly in useEffect
+        loadPublications();
     }, []);
+
+    const sortedPublications = publications.sort((a, b) => {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    });
 
     return (
         <main>
@@ -42,14 +46,18 @@ const Forum = () => {
                 {error ? (
                     <p>{error}</p>
                 ) : (
-                    publications.map((pub) => (
+                    sortedPublications.map((pub) => (
                         <ForumCard
-                            name="teste" // Assuming name is part of the publication data
-                            buttonText="Visitar o perfil" // You might want to adjust this based on your data
+                            key={pub._id}
+                            _id={pub._id}
+                            name="teste"
+                            buttonText="Visitar o perfil"
                             title={pub.title}
                             content={pub.content}
                             fileSrc={pub.fileSrc}
                             language='portuguese'
+                            createdAt={pub.createdAt}
+                            updatedAt={pub.updatedAt}
                         />
                         ))
                 )}
