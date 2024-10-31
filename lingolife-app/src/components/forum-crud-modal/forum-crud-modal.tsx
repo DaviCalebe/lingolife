@@ -31,41 +31,55 @@ const ForumCrudModal = ({ isOpen, onClose }: ModalProps) => {
                 <div className="forum-crud-modal">
                     <div className="overlay" onClick={onClose}>
                         <div className="container" onClick={(e) => e.stopPropagation()}>
-                            <h2>CRIAR POSTAGEM</h2>
+                            <h2 id='create-post-title' >CRIAR POSTAGEM</h2>
+                        
+                            <div className="inputs">
+                                <div className="header-inputs">
 
-                            <h2>Título</h2>
+                                    <div className="input-title">
 
-                            <input type="text"
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)} />
+                                        <input type="text"
+                                        placeholder='Título'
+                                        value={title}
+                                        onChange={(e) => setTitle(e.target.value)} />
+                                    </div>
 
-                            <h2>Linguagem</h2>
+                                    <div className="input-language">
 
-                            <select name="languages"
-                            id="language"
-                            value={language}
-                            onChange={(e) => setLanguage(e.target.value)}>
-                                <option value="">Selecione uma linguagem</option>
-                                <option value="portuguese">Português</option>
-                                <option value="english">Inglês</option>
-                            </select>
+                                        <select name="languages"
+                                        id="language"
+                                        value={language}
+                                        onChange={(e) => setLanguage(e.target.value)}>
+                                            <option value="">Selecione uma linguagem</option>
+                                            <option value="portuguese">Português</option>
+                                            <option value="english">Inglês</option>
+                                        </select>
 
-                            <h2>Texto</h2>
+                                    </div>
+                                </div>
 
-                            <input type="text"
-                            className=''
-                            placeholder='No que você está pensando?'
-                            value={content} onChange={(e) => setContent(e.target.value)} />
+                                <div className="input-content">
 
-                            <input type="file"
-                            onChange={(e) => {
-                                if (e.target.files) {
-                                    setFileSrc(e.target.files[0])
-                                }
-                            }}/>
+                                    <input type="text"
+                                    className=''
+                                    placeholder='No que você está pensando?'
+                                    value={content} onChange={(e) => setContent(e.target.value)} />
+
+                                </div>
+
+
+                                <input type="file"
+                                id='file-input'
+                                onChange={(e) => {
+                                    if (e.target.files) {
+                                        setFileSrc(e.target.files[0])
+                                    }
+                                }}/>
+                            </div>
+
 
                             <div className="action-buttons">
-                                <button onClick={onClose}>CANCELAR</button>
+                                <button id='cancel-button' onClick={onClose}>CANCELAR</button>
                                 <button onClick={handleSubmit}>PUBLICAR</button>
                             </div>
                         </div>

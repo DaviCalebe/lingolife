@@ -33,10 +33,10 @@
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
-    background: white; /* Background color of the modal */
+    background: white;
     padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    z-index: 1001; /* Ensure it is above the background */
+    border-radius: 8px;
+    z-index: 1001;
 }
 
 .action-buttons{
@@ -48,4 +48,29 @@
 
 .action-buttons button{
     border-radius: 10px;
+}
+
+.overlay .container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+#create-post-title{
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+
+.header-inputs{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: space-around;
+}
+
+.input-content input{
+    width: 100%;
+}
+
+#cancel-button{
+    background-color: $grey;
+    color: $black;
 }
