@@ -1,0 +1,27 @@
+@import '../../style/variables.scss';
+
+.perfil-container{
+    background: $purple;
+    width: 400px;
+    height: 450px;
+    border-radius: 30px;
+    color: $white;
+    display: grid;
+    gap: 20px;
+    
+}
+
+.section-perfil{
+    display: flex;
+    align-items: center;
+    
+}
+
+.profile-img-2{
+width: 150px;
+height: 150px;
+-webkit-box-shadow: -10px 20px 0px -11px $white;
+-moz-box-shadow: -10px 20px 0px -11px $white;
+box-shadow: -10px 20px 0px -11px $white;
+border-radius: 30px;
+}

@@ -1,0 +1,70 @@
+@import '../../style/variables.scss';
+
+.main-container{
+    color: $white;
+    display: grid;
+    justify-items: center;
+}
+
+
+.info-profile{
+display: flex;
+padding-bottom: 40px;
+align-items: center;
+position: relative;
+
+}
+
+.img-profile{
+width: 200px;
+height: 200px;
+-webkit-box-shadow: -22px 31px 0px -11px $purple;
+-moz-box-shadow: -22px 31px 0px -11px $purple;
+box-shadow: -22px 31px 0px -11px $purple;
+border-radius: 30px;
+}
+
+.rectangle-left{
+    position: relative;
+    left: -550px;
+    top: 200px;
+    
+}
+
+
+
+.about-profile{
+background: $purple;
+width: 700px;
+padding: 30px;
+border-radius: 30px;
+text-align: start;
+
+}
+
+.about-my{
+    margin-bottom: 15px;
+}
+
+.material-container{
+    margin:30px;
+    
+}
+
+.material-complements{
+    display: flex;
+    gap: 30px;
+   
+    
+}
+
+.complements-button{
+    background: $purple;
+    width: 130px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 20px;   
+    border: 0;
+    cursor: pointer;
+}
