@@ -1,0 +1,40 @@
+@import '../../style/variables.scss';
+
+.forum-card{
+    display: grid;
+    background-color: $grey;
+    width: 70vw;
+    padding: 3rem;
+    gap: 1.5rem;
+    border-radius: 10px;
+    position: relative;
+
+    &::before{
+        content: "";
+        background-image: url(../../assets/usa-flag.png);
+        background-size: cover;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: -20px;
+        right: 10px;
+        z-index: 30;
+    }
+}
+
+.header{
+    display: flex;
+    gap: 2rem;
+}
+
+.header .user-link{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.post-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

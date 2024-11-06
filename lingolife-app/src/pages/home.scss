@@ -1,0 +1,253 @@
+@import '../style/variables.scss';
+
+.banner{
+    background-image: url(../assets/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.banner-elements{
+    display: flex;
+}
+
+.paper-img{
+    width: 70%;
+}
+
+.woman-img{
+    width: 100%;
+    max-width: 43rem;
+}
+
+.welcome-msg{
+    display: flex;
+    flex-direction: column;
+    color: $white;
+}
+
+.welcome-msg h1, .welcome-msg p{
+    font-size: 36px;
+}
+
+.languages{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 6rem;
+    width: 100%;
+    height: auto;
+    padding: 3rem 0 5rem 0;
+    background-color: $grey;
+}
+
+.languages h1{
+    color: $dark-blue;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.languages .flags{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.flags img{
+    width: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.description{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: $cyan;
+    height: auto;
+}
+
+.description div{
+    padding: 2rem;
+}
+
+.img-effect {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+  }
+
+.img-effect .void-box, .img-effect .dark-blue-box {
+    max-width: 542px;
+    max-height: 473px;
+    border-radius: 113px;
+}
+
+.img-effect .void-box {
+    transform: translateY(-30px);
+}
+
+.img-effect .dark-blue-box {
+    transform: translateY(30px) translateX(-30px);
+}
+
+.img-effect > * {
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 113px;
+}
+
+.img-effect .void-box {
+    background-color: transparent;
+    border: 1px solid $dark-blue;
+}
+
+.img-effect .dark-blue-box {
+    background-color: $dark-blue;
+}
+  
+.img-effect img {
+    z-index: 5;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.info h1{
+    color: $dark-blue;
+    font-size: 3.5rem;
+}
+
+.info p{
+    color: $white;
+    font-size: 2.5rem;
+}
+
+.home-shortcuts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+}
+
+.smart-matching{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: #f6f6f6;
+    padding-bottom: 60px;
+}
+
+.forum-space{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: $white;
+    padding-bottom: 60px;
+}
+
+.smart-matching p, .forum-space p{
+    width: 50%;
+    color: $dark-blue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.grid-centralize{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-centralize > *{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.img-button{
+    cursor: pointer;
+}
+
+.home-shortcuts div button{
+    background-color: $dark-blue;
+    color: $white;
+    width: 25rem;
+    height: 8rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 2rem;
+    margin-top: 19rem;
+}
+
+.filter-and-scheduling{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $cyan;
+    height: auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.filters, .scheduling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-and-scheduling .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 50%;
+    padding: 3rem;
+    background-color: $white;
+    border-radius: 43px;
+    color: $dark-blue;
+}
+
+.container button{
+    width: 70%;
+    background-color: $dark-blue;
+    color: $white;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1282px) { 
+    .description{
+        grid-template-columns: 1fr;
+    }
+    .description div{
+        padding: 4rem;
+    }
+    .home-shortcuts{
+        grid-template-columns: 1fr;
+    }
+    .filter-and-scheduling{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .languages .flags{
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+}
