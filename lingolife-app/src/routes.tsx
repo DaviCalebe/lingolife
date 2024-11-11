@@ -5,6 +5,9 @@ import Matching from "./pages/matching/matching.tsx";
 import ErrorPage from "./pages/error/error.tsx";
 import Forum from "./pages/forum/forum.tsx";
 import App from "./App.tsx"; // Import the App component
+import { MyProfile } from "./pages/my-profile/my-profile.tsx";
+import { Profiles } from "./pages/profiles/perfiles.tsx";
+
 
 let router: ReturnType<typeof createBrowserRouter>; // Use ReturnType to get the correct type
 
@@ -30,7 +33,18 @@ try {
                 {
                     path: "forum",
                     element: <Forum />,
+                },
+                {
+                    path: "my-profile",
+                    element: <MyProfile/> ,
+                    
+                },
+                {
+                    path: "profiles",
+                    element: <Profiles/> ,
+                    
                 }
+
             ],
         }
     ]);
