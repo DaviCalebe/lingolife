@@ -1,13 +1,20 @@
 @import '../../style/variables.scss';
 
+
+.main-container-2{
+    
+}
+
 .perfil-container{
     background: $purple;
-    width: 400px;
-    height: 450px;
+    width: 300px;
+    height: 350px;
     border-radius: 30px;
     color: $white;
     display: grid;
     gap: 20px;
+    padding: 10px;
+    justify-content: center;
     
 }
 
@@ -18,10 +25,36 @@
 }
 
 .profile-img-2{
-width: 150px;
-height: 150px;
+width: 100px;
+height: 100px;
 -webkit-box-shadow: -10px 20px 0px -11px $white;
 -moz-box-shadow: -10px 20px 0px -11px $white;
 box-shadow: -10px 20px 0px -11px $white;
 border-radius: 30px;
+}
+
+.about-my{
+    font-size: 20px;
+}
+
+.phrase{
+font-size: 15px;
+
+    
+}
+
+.div-button{
+    display: grid;
+    justify-items: end;
+    margin-top: 10px;
+}
+
+.button-profile{
+background-color: $dark-blue;
+color: $white;
+cursor: pointer;
+padding: 10px;
+border: none;
+border-radius: 10px 0px 10px 10px;
+
 }

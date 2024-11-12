@@ -1,5 +1,7 @@
 import "./profiles.scss"
 import Footer from "../../components/footer/footer";
+import { MdStarBorder } from "react-icons/md";
+
 
 
 export function Profiles(){
@@ -17,9 +19,9 @@ export function Profiles(){
              alt="" />
             </div>
 
-            <div>
+            <div >
                 <h1> <b>Jóse Lucas </b> </h1>
-                <span> 4,5 </span> 
+                <span> <MdStarBorder /> 4,5 </span> 
             </div>
 
             </section>
@@ -28,16 +30,16 @@ export function Profiles(){
             <section>
 
                 <div>
-                <h2> <b> Sobre Mim </b> </h2>
+                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
                 </div>
 
                 <div>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-                     tenetur doloribus voluptates natus vel nam aliquam ea, rem aspernatur 
-                     voluptatem architecto culpa iure, laboriosam eveniet adipisci ex recusandae maiores cum.</p>
+                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
                 </div>
-
-                <button> Visitar Perfil </button>
+                
+                <div className="div-button">
+                <button className="button-profile"> Visitar Perfil </button>
+                </div>
                 
             </section>
 

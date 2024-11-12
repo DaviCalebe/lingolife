@@ -2,6 +2,7 @@ import Footer from "../../components/footer/footer";
 import "./my-profile.scss"
 import books from "../../assets/books.png"
 import rectangle_left from "../../assets/Rectangle-left.png"
+import { MdStarBorder } from "react-icons/md";
 
 
 export function MyProfile() {
@@ -34,7 +35,7 @@ export function MyProfile() {
             <b>Espanhol </b> Avançado
           </p>
           <p>Este usuario está no ranking de inglês </p>
-          <span> 4,5 </span> {/* falta colocar um icon de estrla */}
+          <span> <MdStarBorder /> 4,5 </span>
         </section>
       </section>
 
