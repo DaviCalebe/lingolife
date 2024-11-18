@@ -194,7 +194,7 @@ const userController = {
       if(req.file){ 
         user.image = req.file.filename;
       }
-
+ 
       const id = req.params.id;
  
       //validation
