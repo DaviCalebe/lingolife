@@ -1,0 +1,300 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; 
+  }
+  
+  .register-card {
+    background-color: #D9D9D9;
+    width: 44%;
+    height: auto; 
+    border-radius: 72px;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    margin: 10rem;
+    position: relative;
+  }
+  
+  .register-card h2 {
+    color: #09116D;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 38.73px;
+    text-align: center;
+    margin-bottom: 9rem;
+  }
+  
+  .register-card p {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  
+  .register-card input {
+    background-color: transparent;
+    border: 2px solid #4F4F4F;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 4rem;
+    width: 95%;
+    font-size: 1.4rem;
+  }
+  
+  .register-card .about-me {
+    width: 95%;
+    height: 150px;
+    padding: 15px;
+    font-size: 1.4rem;
+    border: 2px solid #4F4F4F;
+    border-radius: 18px;
+    background-color: transparent;
+    resize: vertical;
+    overflow-y: auto;
+  }
+  
+  .upload-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 3rem;
+  }
+  
+  .upload-label {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .upload-input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    font-size: 1.4rem;
+    border: 2px solid #4F4F4F;
+    border-radius: 18px;
+    background-color: transparent;
+    cursor: pointer;
+    color: #4F4F4F;
+  }
+  
+  .upload-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  
+  .upload-input:hover::before {
+    background: #e0e0e0;
+  }
+  
+  h3 {
+    color: #09116D;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+  }
+  
+  .language-profile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+  
+  .level-select,
+  .language-select {
+    width: 45%;
+    padding: 10px;
+    font-size: 1.4rem;
+    border: 2px solid #4F4F4F;
+    border-radius: 18px;
+    background-color: transparent;
+  }
+  
+  .eye-icon-register {
+    position: absolute;
+    right: 1rem;
+    top: 40%;
+    transform: translateY(-100%);
+    cursor: pointer;
+  }
+  
+  .eye-icon-register img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .text {
+    text-align: center !important;
+    margin: 3rem;
+    font-weight: 500 !important;
+  }
+  
+  .register-card a:active,
+  .register-card a:focus {
+    color: #09116D;
+    outline: none;
+  }
+  
+  button {
+    background-color: #09116D;
+    width: 50px;
+    height: 50px;
+    border-radius: 38px;
+    border: none;
+  }
+  
+  .register-card button {
+    background-color: #09116D;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .register-card button:hover {
+    background-color: #090f56;
+  }
+  
+  .register-card img {
+    width: 30px;
+    height: auto;
+  }
+  
+  
+  @media only screen and (max-width: 1024px) {
+    .register-card {
+      padding: 2rem;
+      border-radius: 36px;
+      margin: 3rem;
+    }
+  
+    .register-card p {
+      font-size: 1.2rem;
+    }
+  
+    .register-card input,
+    .register-card .about-me,
+    .upload-input,
+    .language-profile select {
+      font-size: 1.2rem;
+      padding: 12px;
+      margin-bottom: 3rem; 
+    }
+  
+    .register-card .about-me {
+      height: 120px; 
+    }
+  
+    .upload-label {
+      font-size: 1.4rem;
+    }
+  
+    .language-profile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .level-select,
+    .language-select {
+      width: 100%;
+      margin-bottom: 1.5rem; 
+    }
+  
+    button {
+      width: 45px;
+      height: 45px;
+    }
+  
+    .register-card button img {
+      width: 20px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .register-card {
+      width: 90%; 
+      margin: 2rem;
+      padding: 1.5rem;
+    }
+  
+    .register-card h2 {
+      font-size: 1.8rem;
+    }
+  
+    .register-card p {
+      font-size: 1.2rem;
+    }
+  
+    .register-card input,
+    .register-card .about-me,
+    .upload-input,
+    .language-profile select {
+      font-size: 1.2rem;
+      padding: 10px;
+    }
+  
+    .register-card button {
+      width: 45px;
+      height: 45px;
+    }
+  
+    .register-card button img {
+      width: 20px;
+    }
+  
+    .eye-icon-register {
+      top: 45%;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .register-card {
+      width: 100%;
+      padding: 1rem;
+      margin: 1rem;
+    }
+  
+    .register-card h2 {
+      font-size: 1.5rem;
+    }
+  
+    .register-card p {
+      font-size: 1rem;
+    }
+  
+    .register-card input,
+    .register-card .about-me,
+    .upload-input,
+    .language-profile select {
+      font-size: 1rem;
+      padding: 8px;
+    }
+  
+    .register-card .about-me {
+      height: 100px; /* Ajusta a altura da área de texto */
+    }
+  
+    .register-card button {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .register-card button img {
+      width: 18px;
+    }
+  
+    .eye-icon-register {
+      top: 50%;
+    }
+  }

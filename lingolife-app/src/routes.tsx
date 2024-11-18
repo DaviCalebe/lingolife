@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/home.tsx";
 import Login from "./pages/login/login.tsx";
+import Register from "./pages/register/register.tsx";
+import Ranking from "./pages/ranking/ranking.tsx";
 import Matching from "./pages/matching/matching.tsx";
 import ErrorPage from "./pages/error/error.tsx";
 import Forum from "./pages/forum/forum.tsx";
@@ -25,6 +27,14 @@ try {
                 {
                     path: "login",
                     element: <Login />,
+                },
+                {
+                    path: "register",
+                    element: <Register />,
+                },
+                {
+                    path: "ranking",
+                    element: <Ranking />,
                 },
                 {
                     path: "matching",

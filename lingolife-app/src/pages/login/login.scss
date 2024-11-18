@@ -1,0 +1,159 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: 100vh;
+}
+
+.login-card {
+    background-color: #D9D9D9;
+    width: 90%;
+    height: 90%;
+    max-width: 700px;
+    border-radius: 72px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 10rem;
+    position: relative;
+}
+
+.login-card h2 {
+    color: #09116D;
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.login-card p {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.login-card input {
+    background-color: transparent;
+    border: 2px solid #4F4F4F;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 2rem;
+    width: 90%;
+    font-size: 1.1rem;
+    
+}
+
+.password-container-login {
+    position: relative;
+    width: 100%;
+}
+
+.password-login {
+    padding-right: 3rem; 
+}
+
+.text {
+    text-align: center;
+    margin: 2rem 0;
+    font-weight: 500;
+}
+
+.button-login {
+    background-color: #09116D;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute; 
+    right: 4rem; 
+    bottom: 2rem;
+}
+
+.button-login:hover {
+    background-color: #090f56;
+}
+
+.button-login img {
+    width: 24px;
+    height: 24px;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password {
+    width: calc(100% - 40px); 
+    padding-right: 40px; 
+}
+
+.eye-icon {
+    position: absolute;
+    right: 4rem; 
+    top: 60%; 
+    transform: translateY(-100%); 
+    cursor: pointer; 
+}
+
+.eye-icon img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 10px;
+}
+/* Responsividade */
+@media only screen and (max-width: 768px) {
+    .login-card {
+        width: 85%;
+        height: 95%;
+        padding: 2rem 1rem;
+        margin: 1rem;
+    }
+
+    .login-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .login-card p {
+        font-size: 1rem;
+    }
+
+    .button-login {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .login-card {
+        height: 95%;
+        padding: 1.5rem 1rem;
+    }
+
+    .login-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .login-card input {
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    .eye-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .button-login {
+        width: 25px;
+        height: 25px;
+    }
+}
