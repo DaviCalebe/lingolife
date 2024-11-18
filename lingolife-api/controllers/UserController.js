@@ -191,7 +191,7 @@ const userController = {
 
       const { name, email, password, confirmpassword, language, about } = req.body;
  
-      if(req.file){
+      if(req.file){ 
         user.image = req.file.filename;
       }
 
