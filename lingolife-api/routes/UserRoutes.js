@@ -19,8 +19,11 @@ router.route('/checkuser')
 router.route('/:id')
 .get((req, res) => UserController.getUserById(req, res));
 
+router.route("/")
+.get((req, res) => UserController.getAllUsers(req, res));
+
 router.route('/edit/:id')
 .patch(verifyToken, imageUpload.single('image'),(req, res) =>  UserController.editUser(req, res));
 
 
-export default router; 
+export default router;

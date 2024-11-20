@@ -39,6 +39,11 @@ const userSchema = new Schema({
 
         },
 
+        posts: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Service', // Referência ao modelo Forum
+        }],
+
       /*role:{
             type:String,
             default:"user"

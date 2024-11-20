@@ -4,8 +4,6 @@ import bcrypt from "bcrypt";
 
 import jwt from "jsonwebtoken";
 
-
-
 //helpers
 import createUserToken from "../helpers/create-user-token.js";
 import getToken from "../helpers/get-token.js";
@@ -31,10 +29,6 @@ const userController = {
       return;
     }
 
-    if (!language || !language.idioma || !language.level) {
-      res.status(422).json({ message: "O idioma e o nível são obrigatórios" });
-      return;
-    }
 
     if (!about) {
       res.status(422).json({ message: "O Sobre é obrigatório" });
@@ -275,14 +269,22 @@ const userController = {
 
       }
 
-
-
     } catch (error) {
       console.log(error);
     }
 
 
   },
+
+  getAllUsers: async (req, res) => {
+    try {
+        const users = await User.find().populate('posts').select("-password");
+        res.status(200).json(users);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Erro ao buscar os usuários." });
+    }
+},
 
 
 };

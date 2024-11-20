@@ -1,21 +1,31 @@
 import { Forum } from "../models/Forum.js";
 import fs from 'fs';
 import multer from 'multer';
-
+import { User } from '../models/user.js';
 
 const forumController = {
 
     create: async (req, res) => {
         try {
+            
             const file = req.file;  
+
             const forum = {
                 title: req.body.title,  
                 content: req.body.content,  
                 fileSrc: file ? file.path : null,
                 language : req.body.language,
+                user: req.user.id,
             };
 
             const response = await Forum.create(forum);
+
+            await User.findByIdAndUpdate(
+                req.user.id,
+                { $push: { posts: response._id } }, // Adiciona o ID do post
+                { new: true }
+            );
+
             res.status(201).json({ response, msg: "Publicação Postada no Fórum!" });
 
         } catch (error) {
@@ -30,7 +40,7 @@ const forumController = {
     },
     getAll: async(req,res) =>{
         try{
-            const forumPublications = await Forum.find();
+            const forumPublications = await Forum.find().populate('user', 'name email');
 
             res.json(forumPublications);
         }catch(error){
@@ -42,14 +52,14 @@ const forumController = {
         try {
             //id => URL == GET
             const id = req.params.id;
-            const forumPublications = await Forum.findById(id);
-
-            if(!forumPublications)
+            
+            const forumPost = await Forum.findById(id).populate('user', 'name email');
+            if(!forumPost)
                 {
                   res.status(404).json({msg:"Publicação não encontrada"});
                   return;
                 }
-            res.json(forumPublications);
+            res.json(forumPost);
         } catch (error) {
             console.log(error);
         }
