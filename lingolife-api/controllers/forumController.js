@@ -64,33 +64,40 @@ const forumController = {
             console.log(error);
         }
     },
-    delete: async(req,res) => {
+    delete: async (req, res) => {
         try {
+            const postId = req.params.id;
+            const forumPublication = await Forum.findById(postId);
+    
+            if (!forumPublication) {
+                return res.status(404).json({ msg: "Publicação não encontrada." });
+            }
+    
+           
+            if (forumPublication.fileSrc) {
+                fs.unlinkSync(forumPublication.fileSrc);
+            }
+    
+           
+            const deletedPublication = await Forum.findByIdAndDelete(postId);
+    
             
-            const id = req.params.id;
-            const forumPublications = await Forum.findById(id);
-
-            if(!forumPublications)
-                {
-                  res.status(404).json({msg:"Publicação não encontrada"});
-                  return;
-                }
-                
-            if(forumPublications.fileSrc){
-                fs.unlinkSync(forumPublications.fileSrc)
-                const deletedPublication = await Forum.findByIdAndDelete(id);
-                res.status(200).json({deletedPublication,msg:"Publicação deleteda com sucesso"});
-            }
-            else{
-                const deletedPublication = await Forum.findByIdAndDelete(id);
-                res.status(200).json({deletedPublication,msg:"Publicação deleteda com sucesso"});
-            }
-           
-           
+            await User.findByIdAndUpdate(
+                forumPublication.user, 
+                { $pull: { posts: postId } }, 
+                { new: true }
+            );
+    
+            return res.status(200).json({
+                deletedPublication,
+                msg: "Publicação deletada com sucesso.",
+            });
         } catch (error) {
-            console.log(error);
+            console.error(error);
+            return res.status(500).json({ msg: "Erro ao deletar a publicação." });
         }
     },
+    
 
     update: async(req,res)=>{
         const id = req.params.id;

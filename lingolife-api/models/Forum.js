@@ -25,6 +25,6 @@ const ForumSchema = new Schema({
     { timestamps: true } 
 );
 
-const Forum = mongoose.model("Service",ForumSchema);
+const Forum = mongoose.model("Forum",ForumSchema);
 
 export { Forum, ForumSchema};
