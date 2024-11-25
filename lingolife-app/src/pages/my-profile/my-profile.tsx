@@ -1,86 +1,114 @@
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Footer from "../../components/footer/footer";
-import "./my-profile.scss"
-import books from "../../assets/books.png"
-import rectangle_left from "../../assets/Rectangle-left.png"
+import "./my-profile.scss";
+import books from "../../assets/books.png";
+import rectangle_left from "../../assets/Rectangle-left.png";
 import { MdStarBorder } from "react-icons/md";
-
+import Navbar from "../../components/navbar/navbar"; // Importando a Navbar
+import { Link } from "react-router-dom"; // Certifique-se de importar o Link
 
 export function MyProfile() {
+  const { id } = useParams(); // Obtém o ID da URL
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(`http://127.0.0.1:5000/users/${id}`);
+        if (!response.ok) {
+          throw new Error("Erro ao buscar os dados do usuário.");
+        }
+        const data = await response.json();
+        setUser(data.user); // Atualiza o estado com os dados do usuário
+      } catch (error: any) {
+        console.error(error.message);
+      }
+    };
+
+    if (id) {
+      fetchUser();
+    }
+  }, [id]);
+
   return (
+    <>
+      <Navbar />
 
-      
-    <main className="main-container">
-      <section className="info-profile">
-        <section>
-          <img className="img-profile"
-            src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-            alt="avatar"
-          />
-        </section>
+      <main className="main-container">
+        {user ? (
+          <>
+            <section className="info-profile">
+              <section>
+                <img
+                  className="img-profile"
+                  src={
+                    user.profile_image ||
+                    "https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                  }
+                  alt={`${user.name}'s avatar`} // Melhorando a descrição da imagem
+                />
+              </section>
 
-        <div className="rectangle-left">
-          <img src={rectangle_left} alt="" />
+              <div className="rectangle-left">
+                <img src={rectangle_left} alt="Design Background" /> {/* A imagem tem um nome mais descritivo */}
+              </div>
+
+              <section>
+                <p>OI, ME CHAMO</p>
+                <h1>{user.name}</h1>
+                <p>Eu falo:</p>
+                <p>
+                  <b>{user.language.idioma}</b> {user.language.level}
+                </p>
+                <p>{user.language.idioma}</p>
+                <span>
+                  <MdStarBorder /> 4,5
+                </span>
+                <p>
+                  <b>Email:</b> {user.email}
+                </p>
+              </section>
+            </section>
+
+            <section className="about-profile">
+              <h2 className="about-my">
+                <b>Sobre mim :</b>
+              </h2>
+              <p>{user.about}</p>
+            </section>
+
+            <section className="material-container">
+              <h2>Material Publicado</h2>
+              <section className="material-complements">
+                <Link to="/forum" className="no-underline">
+                  <button className="complements-button">
+                    <img src={books} alt="Material 1" />
+                  </button>
+                </Link>
+                <Link to="/forum" className="no-underline">
+                  <button className="complements-button">
+                    <img src={books} alt="Material 2" />
+                  </button>
+                </Link>
+                <Link to="/forum" className="no-underline">
+                  <button className="complements-button">
+                    <img src={books} alt="Material 3" />
+                  </button>
+                </Link>
+              </section>
+            </section>
+          </>
+        ) : (
+          <p>Carregando perfil...</p>
+        )}
+
+        <div className="div-button">
+          <button className="button-mensagem">Enviar mensagem</button>
         </div>
 
-        <section >
-          <p> OI, ME CHAMO </p>
-          <h1> Jóse Lucas </h1>
-          <p> eu falo: </p>
-          <p>
-            
-            <b>Inglês </b> Intermediário
-          </p>
-          <p>
-            
-            <b>Espanhol </b> Avançado
-          </p>
-          <p>Este usuario está no ranking de inglês </p>
-          <span> <MdStarBorder /> 4,5 </span>
-        </section>
-      </section>
-
-      <section className="about-profile">
-        <h2 className="about-my">
-          
-          <b > Sobre mim </b>
-        </h2>
-        <p>
-          
-          Lorem ipsum dolor sit amet consecteturadipisicing elit. Quibusdam, itaque enim
-           iusto accusantium nihil eaque reprehenderit impedit doloremque architecto, 
-           officiis in illum illo officia? Alias qui dolorem repudiandae laborum dolorum.
-        </p>
-      </section>
-
-
-      <section className="material-container">
-
-      <h2> Material Publicado </h2>
-
-      <section className= "material-complements" >
-
-      <button className="complements-button"> 
-      <img   src={books} alt="" />
-      </button>
-
-      <button className="complements-button">
-      <img  src={books} alt="" />
-      </button>
-
-      <button className="complements-button">
-      <img src={books} alt="" />
-      </button>
-
-      </section>
-     </section>
-
-     <div className="div-button" >
-        <button className="button-mensagem"> Enviar mensagem </button>
-      </div>
-
-     <Footer />
-    </main>
-
-    
+        <Footer />
+      </main>
+    </>
   );
 }

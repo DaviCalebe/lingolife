@@ -88,3 +88,35 @@
         background-color: rgba($purple, 0.9);
     }
 }
+
+.user-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $purple; /* Linha roxa que separa a imagem e a descrição */
+    padding-bottom: 10px; /* Ajusta o espaço entre a imagem e a linha */
+    width: 100%; /* Garante que a linha pegue toda a largura */
+    border-bottom: 4px solid #5c0a8b; /* Aumenta a espessura para 3px */
+  }
+  
+  .profile-image {
+    width: 80px; /* Ajuste do tamanho da imagem */
+    height: 80px; /* Ajuste do tamanho da imagem */
+    border-radius: 50%;
+  }
+  
+  .no-image-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .no-image-text {
+    color: white;
+    font-size: 12px;
+  }
+  

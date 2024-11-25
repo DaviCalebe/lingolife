@@ -1,9 +1,11 @@
-import './profile-card.scss'
-import { IBaseCard } from '../../shared/interfaces.tsx'
+import './profile-card.scss';
+import { IBaseCard } from '../../shared/interfaces.tsx';
+import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
 
-interface IProfileCard extends IBaseCard{
-  language_level: string,
-  about?: string,
+interface IProfileCard extends IBaseCard {
+  language_level: string;
+  about?: string;
+  userId: string; // Adicionando o ID do usuário para redirecionamento
 }
 
 const ProfileCard = ({
@@ -12,24 +14,31 @@ const ProfileCard = ({
   language = '',
   language_level = '',
   about = '',
-  buttonText = 'VISITAR O PERFIL'
+  buttonText = 'VISITAR O PERFIL',
+  userId
 }: IProfileCard) => {
+  const navigate = useNavigate(); // Hook de navegação
+
+  // Função para lidar com o clique no botão
+  const handleVisitProfile = () => {
+    navigate(`/profile/${userId}`); // Navega para o perfil do usuário
+  };
+
   return (
     <div className="profile-card">
       <div className="user-header">
         <div className="grid-centralize">
-            {profile_image ? (
-                <img src={profile_image} alt="profile-pic" />
-            ) : (
-                <div className="over-box">
-                    <p className='no-image'>Sem imagem</p>
-                </div>
-            )}
-            <div className="under-box"></div>
+          {profile_image ? (
+            <img className="profile-image" src={profile_image} alt="profile-pic" />
+          ) : (
+            <div className="no-image-container">
+              <p className="no-image-text">Sem imagem</p>
+            </div>
+          )}
         </div>
         <div className="user-info">
           <h1>{name}</h1>
-          <h2>{language} {language_level}</h2>
+          <h4>{language} {language_level}</h4>
         </div>
       </div>
       {about ? (
@@ -39,9 +48,11 @@ const ProfileCard = ({
       ) : (
         <p className="no-about">Sem descrição</p>
       )}
-      <button className="dark-blue-button">{buttonText}</button>
+      <button className="dark-blue-button" onClick={handleVisitProfile}>
+        {buttonText}
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileCard
+export default ProfileCard;

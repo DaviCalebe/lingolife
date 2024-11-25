@@ -1,28 +1,69 @@
-import './matching.scss'
-import Navbar from '../../components/navbar/navbar'
-import ProfileCard from '../../components/profile-card/profile-card.tsx'
-import Footer from '../../components/footer/footer.tsx'
-import Profile_Pic from '../../assets/profile-pic.png'
+import './matching.scss';
+import Navbar from '../../components/navbar/navbar';
+import ProfileCard from '../../components/profile-card/profile-card';
+import Footer from '../../components/footer/footer';
+import { useState, useEffect } from 'react';
 
-const Matching = () => {
-    return (
-        <main>
-            <Navbar
-            title='Correspondência Inteligente'
-            description='Aqui você pode encontrar pessoas com objetivos semelhantes aos seus'/>
-            
-            <div className="cards">
-                <ProfileCard name='Ana Beatriz' language='eng' language_level='A1' ></ProfileCard>
-                <ProfileCard name='Ana Beatriz' profile_image={Profile_Pic} language='eng' language_level='A1' about='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'></ProfileCard>
-                <ProfileCard name='Ana Beatriz' profile_image={Profile_Pic} language='eng' language_level='A1' about='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'></ProfileCard>
-                <ProfileCard name='Ana Beatriz' profile_image={Profile_Pic} language='eng' language_level='A1' about='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'></ProfileCard>
-                <ProfileCard name='Ana Beatriz' profile_image={Profile_Pic} language='eng' language_level='A1' about='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'></ProfileCard>
-                <ProfileCard name='Ana Beatriz' profile_image={Profile_Pic} language='eng' language_level='A1' about='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'></ProfileCard>
-            </div>
-            
-            <Footer></Footer>
-        </main>
-    )
+interface User {
+  _id: string;
+  name: string;
+  language: {
+    idioma: string;
+    level: string;
+  };
+  about: string;
 }
 
-export default Matching
+const Matching = () => {
+  const [users, setUsers] = useState<User[]>([]);
+  const [errorMessage, setErrorMessage] = useState<string>('');
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/users/');
+        if (!response.ok) {
+          throw new Error('Erro ao buscar os usuários.');
+        }
+        const data = await response.json();
+        setUsers(data); // Atualiza o estado com os usuários recebidos
+      } catch (error: any) {
+        setErrorMessage(error.message);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  return (
+    <main>
+      <Navbar
+        title="Correspondência Inteligente"
+        description="Aqui você pode encontrar pessoas com objetivos semelhantes aos seus"
+      />
+
+      <div className="cards">
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {users.length > 0 ? (
+          users.map((user) => (
+            <ProfileCard
+              key={user._id}
+              userId={user._id} // Passa o ID do usuário
+              name={user.name}
+              profile_image="https://cdn-icons-png.flaticon.com/512/4792/4792929.png" // Imagem padrão
+              language={user.language.idioma}
+              language_level={user.language.level}
+              about={user.about || 'Descrição não fornecida.'}
+            />
+          ))
+        ) : (
+          <p className="loading-message">Carregando correspondências...</p>
+        )}
+      </div>
+
+      <Footer />
+    </main>
+  );
+};
+
+export default Matching;

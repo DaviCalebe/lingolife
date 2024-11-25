@@ -1,16 +1,94 @@
-import React, { useState } from 'react';
-import './register.scss'
-import Header from '../../components/header/header.tsx'
-import Footer from '../../components/footer/footer.tsx'
-import Seta from '../../assets/seta-direita.png';
-import EyeOpenIcon from '../../assets/eye.png'; 
-import EyeClosedIcon from '../../assets/eye-closed.png'; 
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importar o hook useNavigate
+import "./register.scss";
+import Header from "../../components/header/header.tsx";
+import Footer from "../../components/footer/footer.tsx";
+import Seta from "../../assets/seta-direita.png";
+import EyeOpenIcon from "../../assets/eye.png";
+import EyeClosedIcon from "../../assets/eye-closed.png";
 
 const Register = () => {
-  const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visibilidade da senha
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    confirmEmail: "",
+    password: "",
+    confirmpassword: "",
+    language: "",
+    level: "",
+    about: "",
+  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Criar a função de navegação
 
+  // Alternar visibilidade da senha
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword); 
+    setShowPassword(!showPassword);
+  };
+
+  // Lidar com mudanças nos inputs
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Lidar com envio do formulário
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+  
+    const { name, email, confirmEmail, password, confirmpassword, about, language, level } = formData;
+  
+    // Validações simples
+    if (!name || !email || !password || !confirmpassword || !about || !language || !level) {
+      setMessage('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
+    if (email !== confirmEmail) {
+      setMessage('Os e-mails não correspondem.');
+      return;
+    }
+    if (password !== confirmpassword) {
+      setMessage('As senhas não correspondem.');
+      return;
+    }
+  
+    // Construir o objeto `language` conforme esperado pela API
+    const payload = {
+      name,
+      email,
+      password,
+      confirmpassword,
+      about,
+      language: {
+        level, // O nível do idioma
+        idioma: language // O idioma selecionado
+      }
+    };
+  
+    try {
+      const response = await fetch("http://127.0.0.1:5000/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload), // Enviar o payload com o formato correto
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        throw new Error(data.message || "Erro ao registrar usuário.");
+      }
+  
+      alert("Usuário registrado com sucesso!");
+      navigate("/"); // Voltar para a Home
+    } catch (error: any) {
+      setErrorMessage(error.message);
+    }
   };
 
   return (
@@ -20,68 +98,114 @@ const Register = () => {
       </div>
       <div className="register-container">
         <div className="register-card">
+          {message && <p className="message">{message}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
           <p>Nome e Sobrenome*</p>
-          <input className="email" placeholder="Digite seu nome e sobrenome" />
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="email"
+            placeholder="Digite seu nome e sobrenome"
+          />
 
           <p>E-mail*</p>
-          <input className="email" placeholder="Digite seu e-mail" />
+          <input
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="email"
+            placeholder="Digite seu e-mail"
+          />
 
           <p>Confirme seu e-mail*</p>
-          <input className="email" placeholder="Digite seu e-mail novamente" />
+          <input
+            name="confirmEmail"
+            value={formData.confirmEmail}
+            onChange={handleChange}
+            className="email"
+            placeholder="Digite seu e-mail novamente"
+          />
 
           <p>Senha*</p>
           <div className="password-container">
             <input
-              type={showPassword ? "text" : "password"} // Se showPassword for true, mostra a senha, caso contrário, oculta
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               className="password"
               placeholder="Digite sua senha"
             />
             <img
-              src={showPassword ? EyeOpenIcon : EyeClosedIcon} // Alterna o ícone com base no estado
+              src={showPassword ? EyeOpenIcon : EyeClosedIcon}
               alt="Mostrar Senha"
               className="eye-icon-register"
-              onClick={togglePasswordVisibility} // Alterna a visibilidade ao clicar no ícone
+              onClick={togglePasswordVisibility}
             />
           </div>
 
-          <p>Sobre mim*</p>
-          <textarea className="about-me" placeholder="Digite algo sobre você"></textarea>
+          <p>Confirmar Senha*</p>
+          <input
+            type={showPassword ? "text" : "password"}
+            name="confirmpassword"
+            value={formData.confirmpassword}
+            onChange={handleChange}
+            className="password"
+            placeholder="Confirme sua senha"
+          />
 
-          <div>
-            <div className="upload-photo">
-              <label htmlFor="upload-input" className="upload-label">Anexe uma foto para o seu perfil*</label>
-              <input type="file" id="upload-input" className="upload-input" />
-            </div>
-          </div>
+          <p>Sobre mim*</p>
+          <textarea
+            name="about"
+            value={formData.about}
+            onChange={handleChange}
+            className="about-me"
+            placeholder="Digite algo sobre você"
+          ></textarea>
 
           <h3>Perfil de Idiomas</h3>
           <p>Idiomas que fala e nível*</p>
           <div className="language-profile">
-            <select className="level-select">
+            <select
+              name="level"
+              value={formData.level}
+              onChange={handleChange}
+              className="level-select"
+            >
               <option value="">Nível</option>
-              <option value="basico">Básico</option>
-              <option value="intermediario">Intermediário</option>
-              <option value="avancado">Avançado</option>
-              <option value="fluente">Fluente</option>
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
             </select>
-            <select className="language-select">
+            <select
+              name="language"
+              value={formData.language}
+              onChange={handleChange}
+              className="language-select"
+            >
               <option value="">Idioma</option>
-              <option value="portugues">Português</option>
-              <option value="ingles">Inglês</option>
-              <option value="espanhol">Espanhol</option>
-              <option value="frances">Francês</option>
-              <option value="italiano">Italiano</option>
+              <option value="Português">Português</option>
+              <option value="Inglês">Inglês</option>
+              <option value="Espanhol">Espanhol</option>
+              <option value="Francês">Francês</option>
+              <option value="Italiano">Italiano</option>
             </select>
           </div>
 
-          <button>
-            <img src={Seta} alt="Seta" />
-          </button>
+          <form onSubmit={handleSubmit}>
+            <button type="submit">
+              <img src={Seta} alt="Seta" />
+            </button>
+          </form>
         </div>
       </div>
       <Footer />
     </main>
   );
 };
-  
-  export default Register; 
+
+export default Register;

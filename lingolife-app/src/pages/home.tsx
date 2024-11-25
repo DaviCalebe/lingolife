@@ -1,4 +1,4 @@
-import './home.scss'
+import './home.scss';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar/navbar.tsx';
 import Footer from '../components/footer/footer.tsx';
@@ -18,6 +18,11 @@ const Home = () => {
       <section className="banner">
         <Navbar/>
       </section>
+
+      {/* Botão de Register */}
+      <Link to="/register" className="register-button">
+        Registrar
+      </Link>
 
       <section className='languages'>
         <h1>Escolha seu idioma de interesse</h1>
@@ -81,9 +86,8 @@ const Home = () => {
       </section>
 
       <Footer />
-
     </main>
-  )
+  );
 }
 
-export default Home
+export default Home;

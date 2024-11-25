@@ -251,3 +251,22 @@
         gap: 5rem;
     }
 }
+.register-button {
+    position:absolute;
+    top: 60px; /* Distância do topo da página */
+    right: 60px; /* Distância da direita da página */
+    background-color: #0f6fce; /* Azul escuro */
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombrinha para dar um efeito */
+    
+    &:hover {
+      background-color: #34495e; /* Cor mais clara no hover */
+    }
+  }
+  
