@@ -33,9 +33,10 @@ export function MyProfile() {
 
   return (
     <>
+      
       <Navbar />
-
       <main className="main-container">
+      
         {user ? (
           <>
             <section className="info-profile">
@@ -50,9 +51,6 @@ export function MyProfile() {
                 />
               </section>
 
-              <div className="rectangle-left">
-                <img src={rectangle_left} alt="Design Background" /> {/* A imagem tem um nome mais descritivo */}
-              </div>
 
               <section>
                 <p>OI, ME CHAMO</p>

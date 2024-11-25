@@ -1,446 +1,448 @@
 import "./profiles.scss"
 import Footer from "../../components/footer/footer";
 import { MdStarBorder } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import { MyProfile } from "../my-profile/my-profile";
 
-
-
-export function Profiles(){
-    return(
+export function Profiles() {
+    return (
         <body>
-          <main>
-            <section className="section-principal">
+            <main>
+                <section className="section-principal">
 
-           
-            <section className="perfil-container" >
 
-            <section className="section-perfil">
+                    <section className="perfil-container" >
 
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                        <section className="section-perfil">
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
-            </section>
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
+                        </section>
 
-            <section>
 
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                        <section>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-            </section>
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
-            <section className="perfil-container" >
+               
+                            <div className="div-button">
+                                <Link to="/my-profile" className=" button-profile" >
+                                    Visitar perfil
+                                </Link>
+                            </div>
+                        </section>
 
-            <section className="section-perfil">
+                    </section>
 
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                    <section className="perfil-container" >
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
+                        <section className="section-perfil">
 
-            </section>
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
-            <section>
+                        </section>
 
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                        <section>
 
-            </section>
-            <section className="perfil-container" >
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-            <section className="section-perfil">
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
+                        </section>
 
-            </section>
+                    </section>
+                    <section className="perfil-container" >
 
+                        <section className="section-perfil">
 
-            <section>
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                        </section>
 
-            </section>
-            <section className="perfil-container" >
-
-            <section className="section-perfil">
-
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
-
-            </section>
-
-
-            <section>
-
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                        <section>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-            </section>
-            <section className="perfil-container" >
-
-            <section className="section-perfil">
-
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
-
-            </section>
-
-
-            <section>
-
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                        </section>
 
-            </section>
-            <section className="perfil-container" >
-
-            <section className="section-perfil">
-
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                    </section>
+                    <section className="perfil-container" >
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
-
-            </section>
+                        <section className="section-perfil">
 
-
-            <section>
-
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
-            </section>
-            <section className="perfil-container" >
+                        </section>
 
-            <section className="section-perfil">
-
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
-
-            </section>
+                        <section>
 
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-            <section>
-
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
 
-            </section>
-            <section className="perfil-container" >
+                        </section>
 
-            <section className="section-perfil">
-
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                    </section>
+                    <section className="perfil-container" >
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
+                        <section className="section-perfil">
 
-            </section>
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
-            <section>
-
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                        </section>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
 
-            </section>
-            <section className="perfil-container" >
+                        <section>
 
-            <section className="section-perfil">
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
 
-            </section>
+                        </section>
 
+                    </section>
+                    <section className="perfil-container" >
 
-            <section>
+                        <section className="section-perfil">
 
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
-            </section>
-            <section className="perfil-container" >
+                        </section>
 
-            <section className="section-perfil">
 
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                        <section>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-            </section>
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
 
-            <section>
+                        </section>
 
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                    </section>
+                    <section className="perfil-container" >
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                        <section className="section-perfil">
 
-            </section>
-            <section className="perfil-container" >
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
-            <section className="section-perfil">
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                        </section>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
 
-            </section>
+                        <section>
 
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-            <section>
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                        </section>
 
-            </section>
-            <section className="perfil-container" >
+                    </section>
+                    <section className="perfil-container" >
 
-            <section className="section-perfil">
+                        <section className="section-perfil">
 
-            <div>
-            <img 
-            className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
-             alt="" />
-            </div>
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
 
-            <div >
-                <h1> <b>Jóse Lucas </b> </h1>
-                <span> <MdStarBorder /> 4,5 </span> 
-            </div>
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
 
-            </section>
+                        </section>
 
 
-            <section>
+                        <section>
 
-                <div>
-                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
-                </div>
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
 
-                <div>
-                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
-                </div>
-                
-                <div className="div-button">
-                <button className="button-profile"> Visitar Perfil </button>
-                </div>
-                
-            </section>
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
 
-            </section>
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
 
-            </section>
+                        </section>
 
-            
-        </main>  
-        <Footer />
+                    </section>
+                    <section className="perfil-container" >
+
+                        <section className="section-perfil">
+
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
+
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
+
+                        </section>
+
+
+                        <section>
+
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
+
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
+
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
+
+                        </section>
+
+                    </section>
+                    <section className="perfil-container" >
+
+                        <section className="section-perfil">
+
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
+
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
+
+                        </section>
+
+
+                        <section>
+
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
+
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
+
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
+
+                        </section>
+
+                    </section>
+                    <section className="perfil-container" >
+
+                        <section className="section-perfil">
+
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
+
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
+
+                        </section>
+
+
+                        <section>
+
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
+
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
+
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
+
+                        </section>
+
+                    </section>
+                    <section className="perfil-container" >
+
+                        <section className="section-perfil">
+
+                            <div>
+                                <img
+                                    className="profile-img-2" src="https://cdn-icons-png.flaticon.com/512/4792/4792929.png"
+                                    alt="" />
+                            </div>
+
+                            <div >
+                                <h1> <b>Jóse Lucas </b> </h1>
+                                <span> <MdStarBorder /> 4,5 </span>
+                            </div>
+
+                        </section>
+
+
+                        <section>
+
+                            <div>
+                                <h2 className="about-my"> <b> Sobre Mim </b> </h2>
+                            </div>
+
+                            <div>
+                                <p className="phrase"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio provident reprehenderit quia quam, unde officia aperiam voluptatibus eaque architecto velit quibusdam accusantium quis et quod nisi pariatur earum dolor. Non!</p>
+                            </div>
+
+                            <div className="div-button">
+                                <button className="button-profile"> Visitar Perfil </button>
+                            </div>
+
+                        </section>
+
+                    </section>
+
+                </section>
+
+
+            </main>
+            <Footer />
         </body>
     )
 
-    
-    
+
+
 }

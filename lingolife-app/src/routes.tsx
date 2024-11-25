@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         // Ajuste a rota para usar '/profile/:id' ao invés de '/my-profile/:id'
         path: 'profile/:id',
-        element: <Profiles />,
+        element: <MyProfile />,
       },
     ],
   },
