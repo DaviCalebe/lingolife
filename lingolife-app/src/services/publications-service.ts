@@ -1,6 +1,6 @@
 import { IPublication, ICreatePublication } from '../shared/interfaces.tsx';
 
-const apiUrl = 'http://127.0.0.1:5000/forum/publication';
+const apiUrl = 'https://lingolifeapi.onrender.com/forum/publication';
 
 export const fetchPublications = async (): Promise<IPublication[]> => {
     try {
