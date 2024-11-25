@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './login.scss';
 import Footer from '../../components/footer/footer.tsx';
 import Seta from '../../assets/seta-direita.png';

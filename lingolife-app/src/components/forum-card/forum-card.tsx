@@ -8,7 +8,6 @@ const ForumCard = ({
     title,
     content,
     fileSrc,
-    language,
 }: IPublication) => {
 
     const fileUrl = fileSrc instanceof File ? URL.createObjectURL(fileSrc) : fileSrc;
