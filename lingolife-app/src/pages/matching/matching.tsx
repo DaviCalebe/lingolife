@@ -21,7 +21,7 @@ const Matching = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/users/');
+        const response = await fetch('https://lingolifeapi.onrender.com/users/');
         if (!response.ok) {
           throw new Error('Erro ao buscar os usuários.');
         }
