@@ -70,11 +70,13 @@ export function MyProfile() {
       <button className="complements-button">
       <img src={books} alt="" />
       </button>
-      
 
       </section>
-
      </section>
+
+     <div className="div-button" >
+        <button className="button-mensagem"> Enviar mensagem </button>
+      </div>
 
      <Footer />
     </main>

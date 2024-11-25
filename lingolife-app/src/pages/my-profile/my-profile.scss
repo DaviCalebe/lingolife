@@ -61,10 +61,27 @@ text-align: start;
 .complements-button{
     background: $purple;
     width: 130px;
+    height: 100px;
     padding: 10px;
     border-radius: 20px;
     text-align: center;
     margin-top: 20px;   
     border: 0;
+    cursor: pointer;
+}
+
+.div-button{
+    position: relative;
+    
+}
+
+.button-mensagem {
+    background:$dark-blue;
+    width: 150px;
+    border-radius: 10px;
+    position: relative;
+    left: 400px;
+    margin-bottom: 20px;
+    color: $white;
     cursor: pointer;
 }

@@ -1,13 +1,17 @@
 @import '../../style/variables.scss';
 
 
-.main-container-2{
+.section-principal{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    justify-items: center;
     
 }
 
 .perfil-container{
     background: $purple;
-    width: 300px;
+    width: 350px;
     height: 350px;
     border-radius: 30px;
     color: $white;
@@ -15,10 +19,12 @@
     gap: 20px;
     padding: 10px;
     justify-content: center;
+    margin-bottom: 20px;
     
 }
 
 .section-perfil{
+    
     display: flex;
     align-items: center;
     
@@ -55,6 +61,7 @@ color: $white;
 cursor: pointer;
 padding: 10px;
 border: none;
+width: 100px;
 border-radius: 10px 0px 10px 10px;
 
 }
