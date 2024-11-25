@@ -2,7 +2,7 @@ import "./profiles.scss"
 import Footer from "../../components/footer/footer";
 import { MdStarBorder } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import { MyProfile } from "../my-profile/my-profile";
+
 
 export function Profiles() {
     return (

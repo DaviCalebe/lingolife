@@ -8,7 +8,7 @@ import ErrorPage from './pages/error/error.tsx';
 import Forum from './pages/forum/forum.tsx';
 import App from './App.tsx';
 import { MyProfile } from './pages/my-profile/my-profile.tsx';
-import { Profiles } from './pages/profiles/perfiles.tsx';
+
 
 const router = createBrowserRouter([
   {

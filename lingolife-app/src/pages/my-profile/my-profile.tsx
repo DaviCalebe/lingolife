@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Footer from "../../components/footer/footer";
 import "./my-profile.scss";
 import books from "../../assets/books.png";
-import rectangle_left from "../../assets/Rectangle-left.png";
+
 import { MdStarBorder } from "react-icons/md";
 import Navbar from "../../components/navbar/navbar"; // Importando a Navbar
 import { Link } from "react-router-dom"; // Certifique-se de importar o Link
