@@ -45,13 +45,13 @@ cd lingolife
 ```
 ### Configuração do Back-end
 ```
-cd server
+cd lingolife-api
 npm install
 npm run dev
 ```
 ### Configuração do Front-end
 ```
-cd client
+cd lingolife-app
 npm install
 npm run dev
 ```
