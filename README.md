@@ -40,7 +40,7 @@ O **LingoLife** é uma aplicação fullstack projetada para conectar pessoas int
 ### **1. Clone o Repositório**
 
 ```
-git clone https://github.com/seu-usuario/lingolife.git
+git clone https://github.com/DaviCalebe/lingolife
 cd lingolife
 ```
 ### Configuração do Back-end
